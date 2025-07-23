@@ -8,7 +8,7 @@ import SettingsIcon from '../Icons/SettingsIcon'
 import ArrowIcon from '../Icons/ArrowIcon'
 
 
-function SideMenu({isMenuOpen, setIsMenuOpen} : {isMenuOpen: boolean, setIsMenuOpen: (value: boolean) => void}) {
+function SideMenu({isMenuOpen} : {isMenuOpen: boolean}) {
 
   
 

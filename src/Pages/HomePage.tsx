@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Net from '../assets/net-4.png.png'
 import EmvoAvatar from '../assets/EmvoAvatar.png';
-
 import AgentCard from '../components/AgentCard';
 import InstagramIcon from '../Icons/InstagramIcon';
 import LinkedinIcon from '../Icons/LinkedinIcon';
@@ -13,7 +12,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-full pt-[3vw] pl-[7vw] pr-[7vw]">
+      <div className="flex flex-col items-center justify-center w-full pt-[15vh] pl-[7vw] pr-[7vw]">
         <div className="main-screen flex flex-col w-full items-center z-[10]">
             <p className="text-[7vh] text-white font-semibold font-weight-700 text-center leading-[8vh] font-['Poppins']">Deploy <span className="bg-gradient-to-r from-[#EC83BB] via-[#4318FF]  to-[#26E5A8]  bg-clip-text text-transparent">intelligent AI teams</span>, <br/> quickly and seamlessly.</p>
             <p className="text-white mt-[2vh] text-md">🔮 Just type what you want Emvo to build - one prompt is all it takes to build. 🧠 </p>
