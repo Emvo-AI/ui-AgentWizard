@@ -7,7 +7,7 @@ import { Outlet } from 'react-router';
 
 function App() {
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen] = useState(false);
   //const {isSignedIn} = useAuth();
 
   // useEffect(() => {
