@@ -1,7 +1,6 @@
 import CollapseIcon from '../Icons/CollapseIcon';
 import HomeIcon from '../Icons/HomeIcon';
 import ArrowIcon from '../Icons/ArrowIcon';
-import ConfigIcon from '../Icons/ConfigIcon';
 
 
 
