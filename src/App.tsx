@@ -1,9 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SideMenu from './components/SideMenu'
 import { Outlet } from 'react-router';
 import NavBar from './components/NavBar';
+import { useAuth } from '@clerk/clerk-react';
+
+
 
 function App() {
+
+  const {isSignedIn, isLoaded} = useAuth();
+  
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      window.location.href = '/login';
+    }
+  },[isLoaded]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,3 +32,4 @@ function App() {
 }
 
 export default App
+

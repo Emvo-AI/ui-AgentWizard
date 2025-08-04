@@ -23,15 +23,15 @@ if (!PUBLISHABLE_KEY) {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <SignedIn>
-        <App />
-      </SignedIn>
-    ),
+    element: <App />,
     children: [
       {
         path: "",
-        element: <HomePage/>
+          element: (
+            <SignedIn>
+              <HomePage/>
+            </SignedIn>
+          )
       },
       {
         path: "conversation",
