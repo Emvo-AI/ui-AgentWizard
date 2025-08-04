@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import {createBrowserRouter, RouterProvider} from "react-router";
 import HomePage from './Pages/HomePage.tsx';
-import { ClerkProvider } from '@clerk/clerk-react';
+import { ClerkProvider, SignedIn } from '@clerk/clerk-react';
 import LoginPage from './Pages/LoginPage.tsx';
 import SignUpPage from './Pages/SignUpPage.tsx';
 import Chat from './Pages/Chat.tsx';
@@ -23,7 +23,11 @@ if (!PUBLISHABLE_KEY) {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <SignedIn>
+        <App />
+      </SignedIn>
+    ),
     children: [
       {
         path: "",
