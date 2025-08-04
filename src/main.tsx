@@ -7,6 +7,10 @@ import HomePage from './Pages/HomePage.tsx';
 import { ClerkProvider } from '@clerk/clerk-react';
 import LoginPage from './Pages/LoginPage.tsx';
 import SignUpPage from './Pages/SignUpPage.tsx';
+import Chat from './Pages/Chat.tsx';
+import ChatConvo from './Pages/ChatConvo.tsx';
+import ConfigureConvo from './Pages/ConfigureConvo.tsx';
+import CustomizeConvo from './Pages/CustomizeConvo.tsx';
 
 // Import your Publishable Key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -24,6 +28,24 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage/>
+      },
+      {
+        path: "conversation",
+        element: <Chat/>,
+        children: [
+          {
+            path: "define",
+            element: <ChatConvo/>
+          },
+          {
+            path: "configure",
+            element: <ConfigureConvo/>
+          },
+          {
+            path: "customize",
+            element: <CustomizeConvo/>
+          }
+        ]
       }
     ]
   },

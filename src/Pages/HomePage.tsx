@@ -4,11 +4,14 @@ import EmvoAvatar from '../assets/EmvoAvatar.png';
 import AgentCard from '../components/AgentCard';
 import InstagramIcon from '../Icons/InstagramIcon';
 import LinkedinIcon from '../Icons/LinkedinIcon';
+import SendIcon from '../Icons/SendIcon';
+import { useNavigate } from 'react-router';
 
 function HomePage() {
 
     const [prompt, setPrompt] = useState("");
     const [activeButton, setActiveButton] = useState("RETAIL")
+    const navigate = useNavigate()
 
   return (
     <>
@@ -20,12 +23,18 @@ function HomePage() {
                 <form className='w-full h-full'> 
                     <input 
                         type='text' 
-                        className='flex w-2/3 text-sm focus:outline-none placeholder:text-white placeholder:text-lg placeholder:font-normal h-full' 
+                        className='flex min-w-2/3 text-sm focus:outline-none placeholder:text-white placeholder:text-lg placeholder:font-normal h-full' 
                         placeholder="✨ Type an idea, task or a role for your AI agent"
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
                     />
+                    
                 </form>
+                <div className='flex items-center justify-center h-full aspect-square bg-gradient-to-br from-[#AA59D6] to-[#4318FE] font-bold rounded-xl hover:cursor-pointer'
+                    onClick={() => navigate("./conversation/define")}>
+                  <SendIcon/>
+                </div>
+                
             </div>
             <p className="text-white mt-[3vh] text-lg font-semibold mt-[7vh]">Tailor your AI agent by usecase 🪄</p>
             <div className="flex flex-row gap-4 mt-[2vh] min-w-[46vw] z-[10] text-md">
