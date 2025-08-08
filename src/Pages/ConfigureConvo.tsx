@@ -48,6 +48,16 @@ function ConfigureConvo() {
                         onClick={() => setSelectedGender("MALE")}>Male</div>
                     <div className={`flex px-4 py-3.5 bg-[#161730] w-1/4 justify-center items-center rounded-lg hover:cursor-pointer border-2 ${selectedGender === "FEMALE" ? "border-green-600" : "border-slate-800" }  text-sm`}
                         onClick={() => setSelectedGender("FEMALE")}>Female</div>
+                    <div className="pr-3.5 bg-[#161730] max-w-[12vw] rounded-lg border-2 border-slate-800">
+                        <select className="px-4 py-3.5 bg-[#161730] w-full h-full text-xs text-sm">
+
+                            <option disabled selected>Select Voice Option</option>
+                            <option>Voice 1</option>
+                            <option>Voice 2</option>
+                            <option>Voice 3</option>
+                            <option>Voice 4</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,7 +133,7 @@ function ConfigureConvo() {
             </div>
             <button 
                 className="py-2 px-4 rounded-full font-bold bg-gradient-to-r from-[#AA59D6] to-[#4318FE] w-[10vw]"
-                onClick={() => navigate("/conversation/customize")}>
+                onClick={() => navigate("/conversation/customize/createCollection")}>
                 Confirm
             </button>
         </div>

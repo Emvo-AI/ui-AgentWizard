@@ -11,6 +11,14 @@ import Chat from './Pages/Chat.tsx';
 import ChatConvo from './Pages/ChatConvo.tsx';
 import ConfigureConvo from './Pages/ConfigureConvo.tsx';
 import CustomizeConvo from './Pages/CustomizeConvo.tsx';
+import CustomizeCreate from './Pages/CustomizeCreate.tsx';
+import CustomizeEdit from './Pages/CustomizeEdit.tsx';
+import CustomizeAdd from './Pages/CustomizeAdd.tsx';
+import CustomizeTools from './Pages/CustomizeTools.tsx';
+import Building from './Pages/Building.tsx';
+import Publish from './Pages/Publish.tsx';
+import Test from './Pages/Test.tsx';
+import AgentFactory from './Pages/AgentFactory.tsx';
 
 // Import your Publishable Key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -47,7 +55,80 @@ const router = createBrowserRouter([
           },
           {
             path: "customize",
-            element: <CustomizeConvo/>
+            element: <CustomizeConvo/>,
+            children: [
+              {
+                path: "createCollection",
+                element: <CustomizeCreate/>
+              },
+              {
+                path: "editCollection",
+                element: <CustomizeEdit/>
+              },
+              {
+                path: "addCollection",
+                element: <CustomizeAdd/>
+              }
+            ]
+          },
+          {
+            path: "selectTools",
+            element: <CustomizeTools/>
+          },
+          {
+            path: "building",
+            element: <Building/>
+          },
+          {
+            path: "publish",
+            element: <Publish/>
+          },
+          {
+            path: "test",
+            element: <Test/>
+          }
+        ]
+      },
+      {
+        path: "agentFactory",
+        element: <AgentFactory/>,
+      },
+      
+      {
+        path: "edit/conversation",
+        element: <Chat/>,
+        children: [
+          {
+            path: "define",
+            element: <ChatConvo/>
+          },
+          {
+            path: "configure",
+            element: <ConfigureConvo/>
+          },
+          {
+            path: "customize",
+            element: <CustomizeConvo/>,
+            children: [
+              {
+                path: "createCollection",
+                element: <CustomizeCreate/>
+              },
+              {
+                path: "editCollection",
+                element: <CustomizeEdit/>
+              },
+              {
+                path: "addCollection",
+                element: <CustomizeAdd/>
+              }
+              
+
+            ]
+          },
+          {
+            path: "selectTools",
+            element: <CustomizeTools/>
           }
         ]
       }
